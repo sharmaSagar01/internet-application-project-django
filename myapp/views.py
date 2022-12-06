@@ -180,7 +180,7 @@ def forgot_password(request):
                 }
                 email = render_to_string(email_template_name, c)
                 try:
-                    send_mail(subject, email, 'sharma9q@uwindsor.ca', [user.email], fail_silently=False)
+                    send_mail(subject, email, '***@gmail.com', [user.email], fail_silently=False)
                 except BadHeaderError:
                     return HttpResponse('Invalid Header Found.')
                 return redirect('myapp:password_reset_complete', 1)
