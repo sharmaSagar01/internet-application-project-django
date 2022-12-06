@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+{% block myhdg %}
+    <h1>Products</h1>
+{% endblock %}
+
+{% block body_block %}
+
+    {% if prodlist %}
+        <h2>List of Products</h2>
+        <ol>
+            {% for prod in prodlist %}
+                <li><a href="{% url 'myapp:productdetail' prod.id %}">{{ prod.name }}</a></li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <a href={% url 'myapp:place_order' %}>
+            <button class="btn btn-primary" type="submit" value="submit">Place Order</button>
+        </a>
+    {% endif %}
+
+
+
+
+{% endblock %}

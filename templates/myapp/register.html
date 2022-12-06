@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+{% block title %}
+    Register
+{% endblock %}
+{% block myhdg %}
+    <h1>Welcome to Registration Page</h1>
+{% endblock %}
+{% block body_block %}
+
+
+    <div class="form-group">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small style="color: grey">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                </p>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit" value="submit">Sign Up</button>
+        </form>
+    </div>
+
+{% endblock %}

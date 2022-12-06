@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+{% block myhdg %}
+    <h1>Products List to Order</h1>
+{% endblock %}
+{% block body_block %}
+    {% if prodlist %}
+        <h2>List of Products</h2>
+        <table>
+            <tr>
+                <th>Product_Name</th>
+                <th>Product_Price</th>
+                <th>Product_Stock</th>
+            </tr>
+            {% for prod in prodlist %}
+                <tr>
+                    <td>{{ prod.name }}</td>
+                    <td>{{ prod.price }}</td>
+                    <td>{{ prod.stock }}</td>
+                </tr>
+                {#                <li> Product_Name = {{prod.name}}, Product_Price = {{ prod.price }}, Available_Stock = {{ prod.stock }} </li>#}
+            {% endfor %}
+        </table>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+        </form>
+    {% endif %}
+
+
+{% endblock %}

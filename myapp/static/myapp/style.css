@@ -1,0 +1,77 @@
+.navbar-brand {
+    margin-left: 15px;
+}
+
+body {
+    background-color: rgba(212, 228, 239, 1) !important;
+}
+
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
+
+h1 {
+    background-color: green;
+    color: white !important;
+    font-size: 40px !important;
+    text-align: center;
+}
+
+h2 {
+    color: red;
+}
+
+.app_body {
+    margin-left: 50px;
+    padding: 20px;
+    height: 100vh;
+
+}
+
+li {
+    color: green;
+}
+
+a {
+    font-size: 20px;
+}
+
+ol {
+    font-size: 20px;
+}
+
+table {
+    border: 1px solid grey !important;
+    padding: 1.5px !important;
+    margin-bottom: 20px !important;
+}
+
+td {
+    border: 1px solid grey !important;
+    padding: 3px !important;
+    text-align: center !important;
+}
+
+th {
+    padding: 5px !important;
+}
+
+form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+
+

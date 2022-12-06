@@ -1,0 +1,33 @@
+{% extends 'myapp/base.html' %}
+
+{% block myhdg %}
+    <h1>{{ products.name }}</h1>
+{% endblock %}
+{% block body_block %}
+    {% if product %}
+        <h2>List of Products</h2>
+        <table>
+            <tr>
+                <th>Product_Name</th>
+                <th>Product_Interest</th>
+                <th>Product_Price</th>
+            </tr>
+            {% for prod in product %}
+                <tr>
+                    <td>{{ prod.name }}</td>
+                    <td>{{ prod.interested }}</td>
+                    <td>{{ prod.price }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>There is no such product</p>
+    {% endif %}
+
+{% endblock %}
